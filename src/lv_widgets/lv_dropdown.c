@@ -915,7 +915,7 @@ static lv_res_t lv_dropdown_signal(lv_obj_t * ddlist, lv_signal_t sign, void * p
         if(info->part == LV_DROPDOWN_PART_LIST ||
            info->part == LV_DROPDOWN_PART_SCROLLBAR ||
            info->part == LV_DROPDOWN_PART_SELECTED) {
-            info->result = lv_obj_get_state(ext->page, LV_PAGE_PART_BG);
+            info->result = ext->page ? lv_obj_get_state(ext->page, LV_PAGE_PART_BG) : LV_STATE_DEFAULT;
         }
     }
     else if(sign == LV_SIGNAL_CLEANUP) {
